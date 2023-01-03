@@ -6,13 +6,9 @@ const ButtonIcon = ({name, onPress}) => {
   const size = 70;
   return (
     <TouchableOpacity onPress={onPress}>
-      <Icon name={name} size={size} color="#fff" style={styles.icon} />
+      <Icon name={name} size={size} color="#fff" />
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  icon: {},
-});
 
 export default ButtonIcon;

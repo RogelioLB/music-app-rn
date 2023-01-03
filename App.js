@@ -21,6 +21,7 @@ const Playlist = () => {
   return (
     <Container>
       <NavBar />
+      {currentSong && <Bar currentSong={currentSong} />}
       <Text
         style={{
           color: '#fff',
@@ -30,11 +31,11 @@ const Playlist = () => {
           borderBottomColor: '#2196F3',
           maxWidth: 200,
           marginLeft: 14,
+          fontWeight: 'bold',
         }}>
         Todas las canciones
       </Text>
       <SongsContainer />
-      {currentSong && <Bar currentSong={currentSong} />}
     </Container>
   );
 };

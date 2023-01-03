@@ -17,7 +17,9 @@ const Song = ({song, id}) => {
     <TouchableOpacity style={styles.container} onPress={selectSong}>
       <Image source={song.thumb} style={styles.image} />
       <View style={styles.data}>
-        <Text style={styles.title}>{song.title}</Text>
+        <Text style={styles.title} numberOfLines={2}>
+          {song.title}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -32,8 +34,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 66,
+    height: 66,
   },
   data: {
     padding: 7,

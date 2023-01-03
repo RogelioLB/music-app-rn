@@ -23,9 +23,10 @@ const Container = ({children}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#263238',
+    backgroundColor: '#342e37',
     flex: 1,
     position: 'relative',
+    flexDirection: 'row',
   },
   circles: {
     width: 238,

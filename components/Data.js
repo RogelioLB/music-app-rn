@@ -10,8 +10,15 @@ const Data = ({title, artist}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <Text style={styles.title} numberOfLines={2}>
+        {title}
+      </Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
         <Text style={styles.artist}>{artist}</Text>
         <Text style={styles.duration}>
           {parsedPosition} - {parsedDuration}
@@ -33,11 +40,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   artist: {
-    fontSize: 15,
+    fontSize: 16,
     color: '#fff',
   },
   duration: {
-    fontSize: 18,
+    fontSize: 14,
     color: '#fff',
   },
 });

@@ -1,6 +1,13 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import TrackPlayer, {
   useProgress,
   usePlaybackState,
@@ -40,7 +47,9 @@ const Bar = ({currentSong}) => {
       <Image source={currentSong.thumb} style={styles.image} />
       <View style={styles.container}>
         <View style={styles.text}>
-          <Text style={styles.title}>{currentSong.title}</Text>
+          <Text style={styles.title} numberOfLines={2}>
+            {currentSong.title}
+          </Text>
           <Text style={styles.artist}>{currentSong.artist}</Text>
           <Text style={styles.duration}>
             {parsedPosition} - {parsedDuration}
@@ -68,15 +77,17 @@ const Bar = ({currentSong}) => {
 
 const styles = StyleSheet.create({
   bar: {
-    height: 100,
     backgroundColor: 'rgba(13, 71, 161, 0.8)',
+    margin: 15,
     position: 'absolute',
-    left: 0,
     bottom: 0,
+    left:
+      Dimensions.get('window').width / 2 - Dimensions.get('window').width / 2,
     borderRadius: 7,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: 15,
+    zIndex: 1,
   },
   image: {
     width: 57,
@@ -86,15 +97,16 @@ const styles = StyleSheet.create({
   container: {
     marginLeft: 10,
     flexDirection: 'row',
+    flex: 1,
   },
   text: {
     flex: 1,
   },
   icons: {
-    flex: 1,
+    flex: 0.3,
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 20,
+    justifyContent: 'flex-end',
   },
   icon: {
     alignItems: 'center',
